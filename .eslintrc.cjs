@@ -1,23 +1,25 @@
-module.exports = {
-  parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
+﻿module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+    jest: true
+  },
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended'
   ],
-  env: {
-    browser: true,
-    node: true,
-    jest: true,
-    es2020: true
-  },
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
   parserOptions: {
-    ecmaVersion: 2020,
+    ecmaVersion: 'latest',
     sourceType: 'module'
   },
   rules: {
-    '@typescript-eslint/no-explicit-any': 'warn',
+    'semi': ['error', 'always'],
+    'quotes': ['error', 'single'],
     '@typescript-eslint/no-unused-vars': ['error', { 'argsIgnorePattern': '^_' }],
+    '@typescript-eslint/no-explicit-any': 'warn',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off'
   }
